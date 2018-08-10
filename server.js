@@ -2,6 +2,11 @@ const express =require('express');
 const hbs=require('hbs');
 const fs=require('fs');
 
+
+
+const port=process.env.port || 3000;
+
+
 var app=express();
 
 
@@ -51,7 +56,7 @@ app.get('/',(req,res)=>{
 
        
         pageTitle:"Home Page1",
-        alertMessage:"Welcome to website!"
+        alertMessage:"Wellcome to website!"
     })
   
 });
@@ -63,6 +68,6 @@ app.get('/about',(req,res)=>{
     });
 })
 
-app.listen(3000,()=>{
-    console.log("SErver id up")
+app.listen(port,()=>{
+    console.log(`Server is listening on port ${port}`);
 });
